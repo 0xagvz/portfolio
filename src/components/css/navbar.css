@@ -50,6 +50,10 @@
     text-decoration: none;
 }
 
+.nav-links li::marker {
+    color: #353535;
+}
+
 .nav-links a:hover {
     opacity: 1;
 }

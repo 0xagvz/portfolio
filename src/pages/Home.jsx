@@ -16,7 +16,7 @@ import {
   SiAndroid,
   SiC
 } from "react-icons/si";
-import { FaNetworkWired, FaTools, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaNetworkWired, FaTools, FaGithub, FaTwitter, FaReddit } from "react-icons/fa";
 
 const stackList = [
   {
@@ -56,6 +56,18 @@ const stackList = [
 ];
 const PROJECTS_DATA = [
 {
+  title: "NES-Emulator",
+  description:
+    "Emulador de Nintendo Entertainment System (NES) desarrollado en C++. Implementa CPU 6502, memoria, cartuchos, PPU y ejecución de ROMs.",
+  url: "https://github.com/0xagvz/NES-Emulator",
+  tags: [
+    { name: "C++", color: "#00599c" },
+    { name: "Linux", color: "#FCC624" },
+    { name: "Emulation", color: "rgba(255, 255, 255, 1)" },
+  ],
+  icon: "github",
+},
+{
     title: "WI-HI?",
     description:
       "Herramienta para identificar dispositivos vivos en una red wifi sin utilizar ningun tipo de libreria externa, solo con sockets y raw packets",
@@ -85,6 +97,7 @@ const PROJECTS_DATA = [
     tags: [
       { name: "C++", color: "#00599c" },
       { name: "Linux", color: "#FCC624" },
+      { name: "Emulation", color: "rgba(255, 255, 255, 1)" },
     ],
   },
   {
@@ -145,14 +158,6 @@ const PROJECTS_DATA = [
       { name: "OSINT", color: "#ff4d4d" },
       { name: "Ciberseguridad", color: "rgba(255, 255, 255, 1)" },
     ],
-    icon: "github",
-  },
-  {
-    title: "Snake Game",
-    description:
-      "Clásico juego de la serpiente desarrollado en C++. Mis primeros pasos dentro del lenguaje",
-    url: "https://github.com/0xagvz/SnakeGame",
-    tags: [{ name: "C++", color: "#00599c" }],
     icon: "github",
   },
 ];
@@ -434,20 +439,15 @@ export default function Home() {
         <div className="aboutme box">
           <h1 className="subtitle">Sobre mi</h1>
           <p>
-            Soy un joven apasionado por la tecnología. Desde chico exploré la
-            computadora por mi cuenta, lo que me llevó a aprender de forma
-            autodidacta programación, interfaces, terminales y sistemas
-            operativos, especialmente Linux.
+            Tengo 18 años y soy un apasionado por la tecnología. Desde chico exploré la computadora de forma autodidacta, lo que me llevó a aprender programación, sistemas operativos, terminales e interfaces, con un fuerte interés en Linux y el funcionamiento interno de los sistemas.
           </p>
+
           <p>
-            Profundicé en desarrollo web y mobile con Python, JavaScript,
-            Node.js y React, siempre buscando entender el funcionamiento
-            interno. Además, me formé en ciberseguridad y pentesting, aplicando
-            técnicas de OSINT y herramientas como Shodan, Nmap y Burp Suite.
+            Me especializo en desarrollo de software y disfruto trabajar tanto en tecnologías de alto nivel como de bajo nivel. Tengo experiencia con Python, JavaScript, Node.js, React, C y C++, y me interesa especialmente la programación low-level, la optimización y entender cómo funcionan las cosas en profundidad.
           </p>
+
           <p>
-            Actualmente estudio Ciencias de la Computación en la Universidad
-            Nacional del Comahue.
+            Actualmente estudio Ciencias de la Computación en la Universidad Nacional del Comahue, mientras continúo desarrollando proyectos personales y ampliando mis conocimientos de manera autodidacta.
           </p>
         </div>
       </div>
@@ -476,7 +476,7 @@ export default function Home() {
 
       <section id="contact" className="section-container">
         <div className="box projects">
-          <h1 className="subtitle">Contacto</h1>
+          <h1 className="subtitle">Redes</h1>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "30px", width: "100%" }}>
             <a
               href="https://github.com/0xagvz/"
@@ -542,6 +542,39 @@ export default function Home() {
                 <FaTwitter className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
               </div>
               <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>@aguatiiin</span>
+            </a>
+
+            <a
+              href="https://www.reddit.com/user/elaguslol/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: "30px 40px",
+                border: "1px solid #0a0a0a",
+                color: "#0a0a0a",
+                textDecoration: "none",
+                minHeight: "160px",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#0a0a0a";
+                e.currentTarget.style.color = "#eeede8";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1.1) rotate(-5deg)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#0a0a0a";
+                e.currentTarget.querySelector(".contact-icon").style.transform = "scale(1) rotate(0deg)";
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", letterSpacing: "2px", margin: 0, lineHeight: 1 }}>REDDIT</span>
+                <FaReddit className="contact-icon" size={40} style={{ transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)" }} />
+              </div>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", letterSpacing: "1px", marginTop: "40px" }}>u/elaguslol</span>
             </a>
           </div>
         </div>
