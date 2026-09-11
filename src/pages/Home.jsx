@@ -169,8 +169,16 @@ const PHRASES = [
   " 血の・結びつき ・ ", 
 ];
 
-const RANDOM_PHRASE = PHRASES[Math.floor(Math.random() * PHRASES.length)];
-const TAPE_CONTENT = RANDOM_PHRASE.repeat(20);
+function shuffleArray(array) {
+  const a = [...array];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const TAPE_CONTENT = shuffleArray(PHRASES).join("").repeat(4);
 
 function HeroImage({ containerRef }) {
   const imageRef = useRef(null);
@@ -333,12 +341,13 @@ export default function Home() {
           },
         )
         .to("#logomask", { maskPosition: "50% 20%", duration: 0.05 })
-        .to(".aboutme", { opacity: 1, duration: 0.05 })
+        .to(".aboutme", { opacity: 1, duration: 0.2 })
         .to(
           ".subtitle",
-          { opacity: 1, zIndex: 1, duration: 0.05, ease: "power2.out" },
+          { opacity: 1, zIndex: 1, duration: 0.1, ease: "power2.out" },
           "<=",
-        );
+        )
+        .to({}, { duration: 0.1 });
 
       gsap.from("#projects", {
         scrollTrigger: {
@@ -405,7 +414,10 @@ export default function Home() {
             <div className="grain" />
 
             <div className="tape-band">
-              <span className="tape-text">{TAPE_CONTENT}</span>
+              <div className="tape-track">
+                <span className="tape-text">{TAPE_CONTENT}</span>
+                <span className="tape-text" aria-hidden="true">{TAPE_CONTENT}</span>
+              </div>
             </div>
 
             <div className="hero-content">
@@ -443,7 +455,7 @@ export default function Home() {
           </p>
 
           <p>
-            Me especializo en desarrollo de software y disfruto trabajar tanto en tecnologías de alto nivel como de bajo nivel. Tengo experiencia con Python, JavaScript, Node.js, React, C y C++, y me interesa especialmente la programación low-level, la optimización y entender cómo funcionan las cosas en profundidad.
+            Me especializo en desarrollo de software y disfruto trabajar tanto en tecnologías de alto nivel como de bajo nivel. Tengo experiencia con Python, JavaScript, Node.js, React, C y C++.
           </p>
 
           <p>

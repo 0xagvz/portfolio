@@ -81,6 +81,16 @@
     bottom: 0;
 }
 
+.tape-track {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    width: max-content;
+    animation: tapescroll linear infinite;
+    animation-duration: 20s;
+    will-change: transform;
+}
+
 .tape-text {
     display: inline-block;
     white-space: nowrap;
@@ -90,20 +100,7 @@
     font-weight: 700;
     color: rgba(255, 255, 255, .82);
     letter-spacing: 10px;
-    animation: tapescroll linear infinite;
     padding-left: 0px;
-}
-
-.tape-band:nth-child(odd) .tape-text {
-    animation-duration: 10s;
-}
-
-.tape-band:nth-child(even) .tape-text {
-    animation-duration: 13s;
-}
-
-.tape-band:nth-child(3) .tape-text {
-    animation-duration: 8s;
 }
 
 @keyframes tapescroll {
