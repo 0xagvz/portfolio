@@ -47,13 +47,14 @@ export default function Navbar() {
             ease: "power3.out",
         });
 
-        gsap.to(".nav-links a", {
-            y: -20,
-            opacity: 100,
+        gsap.from(".nav-links a", {
+            y: -12,
+            opacity: 0,
             duration: 0.6,
             stagger: 0.08,
             delay: 0.9,
             ease: "power2.out",
+            clearProps: "all",
         });
 
         gsap.from(".bottom-nav", {
@@ -85,9 +86,22 @@ export default function Navbar() {
         </div>
 
         <ul className="nav-links">
-            {NAV_ITEMS.map((item) => (
-                <li key={item.id}><a href={`#${item.id}`} onClick={(e) => handleScroll(e, item.id)}>{item.label}</a></li>
-            ))}
+            {NAV_ITEMS.map((item, i) => {
+                const isActive = active === item.id;
+                return (
+                    <li key={item.id}>
+                        <a
+                            href={`#${item.id}`}
+                            onClick={(e) => handleScroll(e, item.id)}
+                            className={isActive ? 'active' : ''}
+                            aria-current={isActive ? 'page' : undefined}
+                        >
+                            <span className="nav-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                            {item.label}
+                        </a>
+                    </li>
+                );
+            })}
         </ul>
 
         </nav>
