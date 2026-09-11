@@ -317,7 +317,7 @@ export default function Home() {
         .timeline({
           scrollTrigger: {
             trigger: ".hero-container",
-            end: "+=300%",
+            end: "+=100%",
             scrub: 1,
             pin: true,
           },

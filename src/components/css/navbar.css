@@ -58,27 +58,107 @@
     opacity: 1;
 }
 
-/* phone responsive */
+
+.bottom-nav {
+    display: none;
+}
+
+/* Phone */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 10px;
-        justify-content: center;
+        padding: 0 20px;
+        height: 56px;
+        justify-content: space-between;
     }
-
-    .nav-logo {
+    .nav-links {
         display: none;
     }
-
-    .nav-links {
-        position: static;
-        transform: none;
-        margin: 0;
-        padding: 0;
-        gap: 15px;
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        z-index: 200;
+        left: 10px;
+        right: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 2px;
+        padding: 6px;
+        background: #0a0a0a;
+        border: 1px solid #1e1e1e;
+        border-radius: 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
 
-    .nav-links a {
-        font-size: 8.5px;
+    .bottom-nav-item {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 4px 9px;
+        border: 1px solid transparent;
+        border-radius: 0;
+        color: #777;
+        text-decoration: none;
+        font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .bottom-nav-item span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .bottom-nav-item:hover {
+        color: #eeede8;
+    }
+
+    .bottom-nav-item:active {
+        transform: scale(0.96);
+    }
+
+    .bottom-nav-item:focus-visible {
+        outline: 1px solid #eeede8;
+        outline-offset: 2px;
+    }
+
+    .bottom-nav-item.active {
+        color: #0a0a0a;
+        background: #eeede8;
+        border-color: #eeede8;
+    }
+
+    body {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+}
+
+@media (max-width: 380px) {
+    .bottom-nav {
+        left: 8px;
+        right: 8px;
+        padding: 4px;
+        gap: 2px;
+    }
+
+    .bottom-nav-item {
+        font-size: 8px;
         letter-spacing: 1.5px;
+        padding: 9px 2px 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bottom-nav-item {
+        transition: none;
     }
 }

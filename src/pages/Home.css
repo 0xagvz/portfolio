@@ -305,6 +305,9 @@
     .section-container {
         padding: 40px 20px;
     }
+    .tape-band {
+        top: calc(58px + 70vh);
+    }
     .box {
         padding: 25px;
     }
@@ -343,5 +346,8 @@
     }
     .hero-index, .hero-scroll {
         display: none;
+    }
+    #contact {
+        padding-bottom: 120px;
     }
 }

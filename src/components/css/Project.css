@@ -75,3 +75,69 @@
     width: 100%;
     margin-top: 30px;
 }
+
+/* Cellphone responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .project-card {
+        padding: 14px;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .project-header {
+        gap: 8px;
+    }
+
+    .project-title {
+        font-size: 1.05rem;
+        letter-spacing: 1px;
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+    }
+
+    .project-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .project-description {
+        font-size: 0.72rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .project-tags {
+        gap: 6px;
+        margin-top: 6px;
+    }
+
+    .project-tag {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    .tag-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .project-card {
+        padding: 12px;
+    }
+
+    .project-description {
+        -webkit-line-clamp: 3;
+    }
+}

@@ -9,6 +9,7 @@
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "dev": "vite",
+    "devLan": "vite --host",
     "lint": "eslint .",
     "preview": "vite preview"
   },
