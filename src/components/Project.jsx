@@ -2,9 +2,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./css/Project.css";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
-export default function Project({ title, description, url, tags }) {
+export default function Project({ title, description, url, tags, icon }) {
     const cardRef = useRef(null);
 
     const { contextSafe } = useGSAP({ scope: cardRef });
@@ -71,7 +71,7 @@ export default function Project({ title, description, url, tags }) {
         >
             <div className="project-header">
                 <h2 className="project-title">{title}</h2>
-                <FaGithub className="project-icon" />
+                {icon === "github" ? <FaGithub className="project-icon" /> : <FaGlobe className="project-icon" />}
             </div>
             <p className="project-description">{description}</p>
             <div className="project-tags">
@@ -80,7 +80,7 @@ export default function Project({ title, description, url, tags }) {
                         <span key={index} className="project-tag">
                             <span
                                 className="tag-dot"
-                                style={{ backgroundColor: tag.color }}
+                                style={{ backgroundColor: tag.color, borderColor: "#232323" }}
                             ></span>
                             {tag.name}
                         </span>

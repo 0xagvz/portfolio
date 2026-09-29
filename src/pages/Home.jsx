@@ -88,6 +88,7 @@ const PROJECTS_DATA = [
       { name: "Linux", color: "#FCC624" },
       { name: "Systems", color: "rgba(255, 255, 255, 1)" },
     ],
+    icon: "github",
   },
   {
     title: "Chip8-Emulator",
@@ -99,6 +100,7 @@ const PROJECTS_DATA = [
       { name: "Linux", color: "#FCC624" },
       { name: "Emulation", color: "rgba(255, 255, 255, 1)" },
     ],
+    icon: "github",
   },
   {
     title: "KeepIt",
@@ -125,40 +127,26 @@ const PROJECTS_DATA = [
     icon: "github",
   },
   {
-    title: "Chatty.cpp",
+    title: "LoopFetch",
     description:
-      "Aplicación Android para inferencia de modelos LLM locales, escrita en JavaScript. Pensado para gente mayor de poco conocimiento técnico.",
-    url: "https://github.com/0xagvz/Chatty.cpp",
+      "Agrega gifs personalizados a fastfetch / neofetch",
+    url: "https://github.com/0xagvz/loopfetch",
     tags: [
+      { name: "C++", color: "#A8B9CC" },
+      { name: "Linux", color: "#FCC624" },
+      { name: "Systems", color: "rgba(255, 255, 255, 1)" },
+    ],
+    icon: "github",
+  },
+  {
+    title: "Tramites y Gestiones Neuquen",
+    description: "",
+    url: "https://www.tramitesygestionesnqn.com/",
+    tags: [
+      { name: "React", color: "#61dafb" },
       { name: "JavaScript", color: "#fbd719" },
-      { name: "AI", color: "#ff66cc" },
-      { name: "Android", color: "#3DDC84" },
-      { name: "React Native", color: "#61dafb" },
+      { name: "Frontend", color: "rgb(35, 219, 15)" },
     ],
-    icon: "github",
-  },
-  {
-    title: "IgForAnons",
-    description:
-      "Herramienta para anonimizar la actividad en Instagram, permitiendo la visualizacion y la descarga de Historias. Función opcional de proxy",
-    url: "https://github.com/0xagvz/IgForAnons",
-    tags: [
-      { name: "Python", color: "#3776ab" },
-      { name: "OSINT", color: "#ff4d4d" },
-    ],
-    icon: "github",
-  },
-  {
-    title: "ProxyScrapper",
-    description:
-      "Automatización en Python para recolectar y validar proxies desde fuentes públicas.",
-    url: "https://github.com/0xagvz/FreeProxyScraper",
-    tags: [
-      { name: "Python", color: "#3776ab" },
-      { name: "OSINT", color: "#ff4d4d" },
-      { name: "Ciberseguridad", color: "rgba(255, 255, 255, 1)" },
-    ],
-    icon: "github",
   },
 ];
 
