@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FiUser, FiGrid, FiLayers, FiMail } from 'react-icons/fi';
 import Logo from './Logo';
-import '../pages/Home.css';
+import { useActiveSection } from '../hooks/useActiveSection';
 import './css/navbar.css';
 
 const NAV_ITEMS = [
@@ -16,28 +16,7 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
     const container = useRef();
-    const [active, setActive] = useState('about');
-
-    useEffect(() => {
-        const sectionList = NAV_ITEMS.map((item) => item.id);
-        const handleScrollSpy = () => {
-            let current = 'about';
-            for (let i = sectionList.length - 1; i >= 0; i--) {
-                const el = document.getElementById(sectionList[i]);
-                if (el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight * 0.45) {
-                        current = sectionList[i];
-                        break;
-                    }
-                }
-            }
-            setActive((prev) => (prev === current ? prev : current));
-        };
-        window.addEventListener('scroll', handleScrollSpy, { passive: true });
-        handleScrollSpy();
-        return () => window.removeEventListener('scroll', handleScrollSpy);
-    }, []);
+    const { activeId: active } = useActiveSection();
 
     useGSAP(() => {
         gsap.from(container.current, {
@@ -69,7 +48,6 @@ export default function Navbar() {
 
     const handleScroll = (e, id) => {
         e.preventDefault();
-        setActive(id);
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
